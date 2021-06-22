@@ -12,7 +12,7 @@ namespace LeetCode
         {
             //SearchInsertProblemSolve();
             //RotateImageProblemSolve();
-
+            MinimumOperationsProblemSolve();
         }
 
         static void SearchInsertProblemSolve()
@@ -41,5 +41,19 @@ namespace LeetCode
             Console.ReadLine();
         }
 
+        static void MinimumOperationsProblemSolve()
+        {
+            string boxes = "110";
+            int[] result = MinimumOperationsProblem.MinOperations(boxes);
+            for (int i = 0; i < result.Length; i++)
+            {
+                Console.Write(result[i] + "\t");
+            }
+
+
+            Console.WriteLine();
+
+            Console.ReadLine();
+        }
     }//class end
 }
