@@ -10,57 +10,29 @@ namespace LeetCode
     {
         public static void Rotate(ref int[][] matrix)
         {
-            ;
-            int resetNumber = (matrix.GetLength(0) - 1);
-            int stepNumber = resetNumber;
+            int N = matrix.GetLength(0);
 
-            int i = 0;
-            int j = 0;
-            int runnerX = i;
-            int runnerY = j;
-            int save = matrix[i][j];
-            int beirando = matrix[i][j];
-            int ctr = 0;
-
-            int starterI = -1;
-            int starterJ = -1;
-
-            while (i != starterI || j != starterJ)
+            //Transpose the matrix
+            for (int i = 0; i < N; i++)
             {
-                starterI = i;
-                starterJ = j;
-                //beirando = matrix[i,j];
-                beirando = save;
-                //search
-                while (runnerX < matrix.GetLength(0) && 0 < stepNumber)
+                for (int j = i; j < N; j++)
                 {
-                    runnerX++;
-                    stepNumber--;
-                    if (runnerX == matrix.GetLength(0))
-                    {
-                        runnerX--;
-                    }
+                    int tmp = matrix[i][j];
+                    matrix[i][j] = matrix[j][i];
+                    matrix[j][i] = tmp;
                 }
-                while (runnerY < matrix.GetLength(1) && 0 < stepNumber)
-                {
-                    runnerY++;
-                    stepNumber--;
-                    if (runnerY == matrix.GetLength(1))
-                    {
-                        runnerY--;
-                    }
-                }
-                //end of search
-
-                save = matrix[runnerX][runnerY];
-                //matrix[runnerX,runnerY] = matrix[i,j];
-                matrix[runnerX][runnerY] = beirando;
-                i = runnerX;
-                j = runnerY;
-                stepNumber = resetNumber;
-                //ctr++;
             }
-            ;
+
+            //Swap
+            for (int i = 0; i < N; i++)
+            {
+                for (int j = 0; j < (N / 2); j++)
+                {
+                    int tmp = matrix[i][j];
+                    matrix[i][j] = matrix[i][(N - j - 1)];
+                    matrix[i][(N - j - 1)] = tmp;
+                }
+            }
         }
 
         public static void Kiir(int[][] matrix)
