@@ -25,10 +25,9 @@ namespace LeetCode
             int pointsLength = points.GetLength(0);
             int[] result = new int[queriesLength];
             int NumberOfPoints = 0;
-            
+            ;
             for (int j = 0; j < queriesLength; j++)
-            {
-                NumberOfPoints = 0;
+            {                
                 for (int k = 0; k < pointsLength; k++)
                 {
                     if (CalcDistance(points[k][0], points[k][1], queries[j][0], queries[j][1]) <= queries[j][2])
@@ -37,14 +36,15 @@ namespace LeetCode
                     }
                 }
                 result[j] = NumberOfPoints;
+                NumberOfPoints = 0;
             }           
 
             return result;
         }
 
-        static private int CalcDistance(int Ax, int Ay, int Bx, int By)
+        static private double CalcDistance(int Ax, int Ay, int Bx, int By)
         {
-            return Convert.ToInt32(Math.Sqrt(Math.Pow((Bx - Ax), 2) + Math.Pow((By - Ay), 2)));
+            return (Math.Sqrt(Math.Pow((Bx - Ax), 2) + Math.Pow((By - Ay), 2)));
         }
     }
 }

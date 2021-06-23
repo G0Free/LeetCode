@@ -70,7 +70,7 @@ namespace LeetCode
 
 
 
-            int[][] points = { new int[] { 1,1 }, new int[] { 2,2}, new int[] { 3,3 }, new int[] { 4, 4 }, new int[] { 5, 5 } };
+            int[][] points = { new int[] { 1, 1 }, new int[] { 2, 2 }, new int[] { 3, 3 }, new int[] { 4, 4 }, new int[] { 5, 5 } };
             int[][] queries = { new int[] { 1, 2, 2 }, new int[] { 2, 2, 2 }, new int[] { 4, 3, 2 }, new int[] { 4, 3, 3 } };
 
 
