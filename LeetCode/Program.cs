@@ -12,7 +12,8 @@ namespace LeetCode
         {
             //SearchInsertProblemSolve();
             //RotateImageProblemSolve();
-            MinimumOperationsProblemSolve();
+            //MinimumOperationsProblemSolve();
+            QueriesOnNumberOfPointsInsideACircleProblemSolve();
         }
 
         static void SearchInsertProblemSolve()
@@ -52,6 +53,32 @@ namespace LeetCode
 
 
             Console.WriteLine();
+
+            Console.ReadLine();
+        }
+
+        static void QueriesOnNumberOfPointsInsideACircleProblemSolve()
+        {
+            /*
+            int[] pointA = { 1, 3 };
+            int[] pointB = { 3, 3 };
+            int[] pointC = { 5, 3 };
+            int[] pointD = { 2, 2 };
+            int[][] points = { pointA, pointB, pointC, pointD };
+           
+            int[][] queries = { new int[] { 2, 3, 1 }, new int[] { 4, 3, 1 }, new int[] { 1, 1, 2 } };*/
+
+
+
+            int[][] points = { new int[] { 1,1 }, new int[] { 2,2}, new int[] { 3,3 }, new int[] { 4, 4 }, new int[] { 5, 5 } };
+            int[][] queries = { new int[] { 1, 2, 2 }, new int[] { 2, 2, 2 }, new int[] { 4, 3, 2 }, new int[] { 4, 3, 3 } };
+
+
+            int[] result = QueriesOnNumberOfPointsInsideACircleProblem.CountPoints(points, queries);
+            for (int i = 0; i < result.Length; i++)
+            {
+                Console.Write(result[i] + "\t");
+            }
 
             Console.ReadLine();
         }
