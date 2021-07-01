@@ -47,6 +47,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueriesOnNumberOfPointsInsideACircleProblem.cs" />
+    <Compile Include="ReorderDatainLogFilesProblem.cs" />
     <Compile Include="RotateImageProblem.cs" />
     <Compile Include="SearchInsertProblem.cs" />
   </ItemGroup>

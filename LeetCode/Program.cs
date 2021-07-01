@@ -13,7 +13,9 @@ namespace LeetCode
             //SearchInsertProblemSolve();
             //RotateImageProblemSolve();
             //MinimumOperationsProblemSolve();
-            QueriesOnNumberOfPointsInsideACircleProblemSolve();
+            //QueriesOnNumberOfPointsInsideACircleProblemSolve();
+
+
         }
 
         static void SearchInsertProblemSolve()
@@ -81,6 +83,11 @@ namespace LeetCode
             }
 
             Console.ReadLine();
+        }
+
+        static void ReorderDatainLogFilesProblemSolve()
+        {
+
         }
     }//class end
 }
