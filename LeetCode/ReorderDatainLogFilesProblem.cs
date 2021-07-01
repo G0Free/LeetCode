@@ -42,27 +42,108 @@ namespace LeetCode
         //All the tokens of logs[i] are separated by a single space.
         //logs[i] is guaranteed to have an identifier and at least one word after the identifier.
         #endregion
+
         static public string[] ReorderLogFiles(string[] logs)
         {
-            for (int i = 0; i < logs.Length; i++)
-            {
-                if (logs[i].Split(' ')[0].Contains("dig")) //digit-log
-                {
+            int N = logs.Length;
 
+            int LastLetPosition = 0;
+            //Reoerdering to letter-logs come before digit-logs.
+            for (int i = 0; i < N - 1; i++)
+            {
+                for (int j = i + 1; j < N; j++)
+                {
+                    if (logs[i].Split(' ')[0].Contains("dig") && logs[j].Split(' ')[0].Contains("let"))
+                    {
+                        Swap(logs, i, j);
+                        LastLetPosition = i;
+                    }
                 }
-                else
+            }
+            ;
+            //Example outcome :
+            //let1 art can,
+            //let2 own kit dig,
+            //let3 art zero,
+            //dig1 8 1 5 1,
+            //dig2 3 6
+
+            //Now we can reorder the two part.
+            //letter part 
+            for (int i = 0; i < (LastLetPosition + 1 - 1); i++)
+            {
+                for (int j = i + 1; j < LastLetPosition + 1; j++)
                 {
 
                 }
             }
 
+            //digit part
+            for (int j = (LastLetPosition + 1); j < N; j++)
+            {
+
+            }
 
             return logs;
         }
 
-        static private int Compare(string a, string b)
+        /*  static public string[] ReorderLogFiles(string[] logs)
+          {
+              int N = logs.Length;
+              for (int i = 0; i < N - 1; i++)
+              {
+                  for (int j = i + 1; j < N; j++)
+                  {
+                      if (logs[i].Split(' ')[0].Contains("dig")) //digit-log
+                      {
+                          int seeker = i;
+                          while (logs[seeker].Split(' ')[0].Contains("dig") && seeker < N)
+                          {
+                              seeker++;
+                          }
+                          if (seeker < N)
+                          {
+                              if (Comparing(logs[i], logs[seeker]) < 0)
+                              {
+                                  //logs[i] > logs[seeker]
+                                  Swap(logs, i, seeker);
+                              }
+                              else if(Comparing(logs[i], logs[seeker]) > 0)
+                              {
+                                  //logs[i] < logs[seeker]
+                                  Swap(logs, seeker, i);
+                              }
+                              else
+                              {
+                                  //logs[i] = logs[seeker]
+                              }
+                          }
+                      }
+                      else
+                      {
+
+                      }
+                  }
+              }
+
+
+              return logs;
+          }
+
+          static private int Comparing(string a, string b)
+          {
+
+              return 0;
+          }
+        */
+
+        static private void Swap(string[] logs, int indexA, int indexB)
         {
-            return 0;
+            string tmp = logs[indexA];
+            logs[indexA] = logs[indexB];
+            logs[indexB] = tmp;
         }
+
+
     }
 }

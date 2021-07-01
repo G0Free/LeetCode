@@ -14,7 +14,9 @@ namespace LeetCode
             //RotateImageProblemSolve();
             //MinimumOperationsProblemSolve();
             //QueriesOnNumberOfPointsInsideACircleProblemSolve();
+            ReorderDatainLogFilesProblemSolve();
 
+            Console.ReadLine();
 
         }
 
@@ -87,7 +89,15 @@ namespace LeetCode
 
         static void ReorderDatainLogFilesProblemSolve()
         {
+            string[] logs = { "dig1 8 1 5 1", "let1 art can", "dig2 3 6", "let2 own kit dig", "let3 art zero" };
 
+            logs = ReorderDatainLogFilesProblem.ReorderLogFiles(logs);
+            for (int i = 0; i < logs.Length; i++)
+            {                
+                Console.WriteLine(logs[i]);
+                
+                
+            }
         }
     }//class end
 }
