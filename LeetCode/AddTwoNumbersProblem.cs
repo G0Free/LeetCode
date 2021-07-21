@@ -29,11 +29,29 @@ namespace LeetCode
         }
         public ListNode AddTwoNumbers(ListNode l1, ListNode l2)
         {
+            int number1 = ListToInt(l1);
+            int number2 = ListToInt(l2);
 
+            int intResult = number1 + number2;
+            string tmp = intResult.ToString();
+            
+
+            for (int i = tmp.Length-1; 0 < i; i--)
+            {
+                int.Parse(tmp[i].ToString());
+            }
 
             return null;
         }
 
-        private string 
+        private int ListToInt(ListNode listNode)
+        {
+            string tmp = "";
+            while (listNode.next != null)
+            {
+                tmp = listNode.val + tmp;
+            }
+            return int.Parse(tmp);
+        }        
     }
 }
