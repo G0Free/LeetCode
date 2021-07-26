@@ -31,19 +31,35 @@ namespace LeetCode
         {
             int number1 = ListToInt(l1);
             int number2 = ListToInt(l2);
-
             int intResult = number1 + number2;
-            string tmp = intResult.ToString();
-            
 
-            for (int i = tmp.Length-1; 0 < i; i--)
+            string tmp = intResult.ToString();
+            //reverse tmp
+            string stringResult = Reverse(tmp);
+
+            ListNode resultListFirstElement = new ListNode(int.Parse(stringResult[0].ToString(),null));
+           
+
+            ListNode SlowIdx = resultListFirstElement;
+            for (int i = 1; i < stringResult.Length; i++)            
             {
-                int.Parse(tmp[i].ToString());
+                //int.Parse(tmp[i].ToString());
+                ListNode resultListElement = new ListNode(int.Parse(stringResult[i].ToString()),null );
+                SlowIdx.next = resultListElement;
+                SlowIdx = resultListElement;
             }
 
-            return null;
+            return resultListFirstElement;
         }
-
+        private string Reverse(string tmp)
+        {
+            string reversedString = "";
+            for (int i = 0; i < tmp.Length; i++)
+            {
+                reversedString += tmp[i];
+            }
+            return reversedString;
+        }
         private int ListToInt(ListNode listNode)
         {
             string tmp = "";
