@@ -100,6 +100,9 @@ namespace LeetCode
             }
         }
 
+        static void AddTwoNumbersProblemSolve()
+        {
 
+        }
     }//class end
 }

@@ -15,6 +15,8 @@ namespace LeetCode
     //Output: [7,0,8]
     //Explanation: 342 + 465 = 807.
 
+    
+
     class AddTwoNumbersProblem
     {
         public class ListNode
@@ -35,18 +37,17 @@ namespace LeetCode
 
             string tmp = intResult.ToString();
             //reverse tmp
-            string stringResult = Reverse(tmp);
+            //string stringResult = Reverse(tmp);
+            string stringResult = tmp;
 
-            ListNode resultListFirstElement = new ListNode(int.Parse(stringResult[0].ToString(),null));
-           
+            ListNode resultListFirstElement = new ListNode(int.Parse(stringResult[0].ToString()),null);           
 
             ListNode SlowIdx = resultListFirstElement;
             for (int i = 1; i < stringResult.Length; i++)            
-            {
-                //int.Parse(tmp[i].ToString());
-                ListNode resultListElement = new ListNode(int.Parse(stringResult[i].ToString()),null );
+            {                
+                ListNode resultListElement = new ListNode(int.Parse(stringResult[i].ToString()),null);
                 SlowIdx.next = resultListElement;
-                SlowIdx = resultListElement;
+                SlowIdx = resultListElement;                
             }
 
             return resultListFirstElement;
@@ -56,7 +57,7 @@ namespace LeetCode
             string reversedString = "";
             for (int i = 0; i < tmp.Length; i++)
             {
-                reversedString += tmp[i];
+                reversedString = tmp[i] + reversedString;
             }
             return reversedString;
         }
